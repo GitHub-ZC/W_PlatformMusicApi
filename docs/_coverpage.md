@@ -1,12 +1,12 @@
 ![logo](https://docsify.js.org/_media/icon.svg)
 
-# 豆瓣影音
+# W_PlatformMusicApi
 
-> 使用Vue全家桶+Node.js搭建的小型全栈项目.
+> 使用Flask+Requests+Python搭建的小型项目.
 
-* 前端框架：vue-cli、vue-router、axios、vuex
-* UI类库：Mint-UI、Vant
-* 后端数据接口：Express、MongoDB
+* Doc：docsify
+* 请求库：Requests
+* 后端数据接口：Flask
 
-[GitHub](https://github.com/Hanxueqing/Douban-Movie.git)
+[GitHub](https://github.com/GitHub-ZC/W_PlatformMusicApi)
 [Get Started](#quick-start)
