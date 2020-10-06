@@ -1,262 +1,377 @@
-# migu
+##  jQuery
 
-## 搜索
+#### jquery 方法
 
-https://m.music.migu.cn/migu/remoting/scr_search_tag?rows=20&type=2&keyword=%E8%AE%B8%E5%B5%A9&pgc=1
+1. filter			过滤  对已经获取的网页元素进行过滤
 
-type：
+2. not              filter反义词
 
-​			歌曲： 2
+3. has              拥有，直接判定子节点中是否有符合条件的元素
 
-​			歌手： 1
+4. prev            查找当前兄弟节点中的上一个节点
 
-​			专辑： 4
+5. next            查找当前兄弟节点中的下一个节点
 
-​			歌单： 6
+6. find             查找子节点
 
-​			MV：   5
+7. index          获取当前节点在兄弟节点中的下标
 
-​			歌词： 7
+8. eq                通过下标获取指定的元素节点
 
-row：  返回数目
+   ```javascript
+   $('li').eq(3).css('backgroundColor', 'red');
+   $('li:eq(3)').css('backgroundColor', 'red');
+   ```
 
-pgc：   分页
+9. attr             用来设置和修改元素行间属性，取值赋值一体化(jQuery特性)
 
+   ```javascript
+   $('#div').attr('id');		//获取元素的属性
+   $('#div').attr('class', 'box');		//修改元素的属性
+   $('#div').attr({
+       title: 'world',
+       class: 'box'
+   })						//一次性修改添加多个属性
+   ```
+
+10. addClass   removeClass    操作class属性
+
+    ```javascript
+    $('#div').addClass('box1 box2');	//自动去重
+    $('#div').removeClass('box1 box2')  //即使class没有，自动判断，去重，只删除存在的class属性
+    ```
 
+11. 获取元素宽度的四个方法：
 
-## 排行榜
+    - ```javascript
+      $('div').css('width');	//value = 100px
+      ```
 
-原创榜：https://m.music.migu.cn/migu/remoting/cms_list_tag?nid=23604032&pageSize=200&pageNo=0
+    - ```javascript
+      $('div').width();	//width
+      ```
 
-网络榜：https://m.music.migu.cn/migu/remoting/cms_list_tag?nid=23604058&pageSize=200&pageNo=0
+    - ```javascript
+      $('div').innerWidth();	//width + padding
+      ```
 
-音乐榜：https://m.music.migu.cn/migu/remoting/cms_list_tag?nid=23603703&pageSize=200&pageNo=0
+    - ```javascript
+      $('div').outerWidth();	//width + padding + border
+      ```
 
-影视榜：https://m.music.migu.cn/migu/remoting/cms_list_tag?nid=23603721&pageSize=200&pageNo=0
+    - ```javascript
+      $('div').outerWidth(true);	//width + padding + border + margin
+      ```
 
+12. 获取元素高度的四个方法：___同上面的width四种方式相对应，举一反三___
 
+13. 节点操作的几种方法：
 
-## 搜索建议
+    > 1\.   insertBefore()  将node1插入到node2之前	before()
+    >
+    > ```javascript
+    > $('div1').insertBefore($('div2'));
+    > $('div2').before($('div1'));
+    > /*两种方法对于jQuery的链式操作主体不同，主题都是第一种元素，这两种方法就是交换了主语而已*/
+    > //下面的后续函数同上一样（都是主语不同，功能相同）
+    > ```
 
-移动端：https://m.music.migu.cn/migu/remoting/autocomplete_tag?keyword=%E8%AE%B8%E5%B5%A9
+    > 2\.   insertAfter()    将node1插入到node2之后    after()
+    >
+    > ```javascript
+    > $('div1').insertAfter($('div2'));
+    > ```
 
-keyword： 关键字
+    > 3\.   appendTo()     将node插入到子节点末尾    append()
+    >
+    > ```javascript
+    > $('span').appendTo($('div'));
+    > ```
 
-PC端：https://music.migu.cn/v3/api/search/suggest?keyword=许嵩
+    > 4\.   prependTo()    将node插入到子节点首位	prepend()
+    >
+    > ```javascript
+    > $('span').prependTo($('div'));
+    > ```
 
-keyword： 关键字（Referer请求头）
-
-
-
-## 实时热搜
-
-https://music.migu.cn/v3/api/search/hotwords  （Referer请求头）
-
-
-
-## 歌词
-
-https://music.migu.cn/v3/api/music/audioPlayer/getLyric?copyrightId=60084600554（Referer请求头）
-
-
-
-## 精选歌单
-
-推荐
-
-https://m.music.migu.cn/migu/remoting/playlist_bycolumnid_tag?playListType=2&type=1&columnId=15127315&tagId=&startIndex=0
-
-最新
-
-https://m.music.migu.cn/migu/remoting/playlist_bycolumnid_tag?playListType=2&type=1&columnId=15127272&tagId=&startIndex=0
-
-歌单详情
-
-https://m.music.migu.cn/migu/remoting/playlistcontents_query_tag?playListType=2&playListId=179730639&contentCount=12
-
-https://m.music.migu.cn/migu/remoting/playlistcontents_query_tag?playListType=2&playListId=179294333&contentCount=22
-
-
-
-
-
-## 获取歌曲url、封面
-
-https://m.music.migu.cn/migu/remoting/cms_detail_tag?cpid=60054701923
-
-cpid：歌曲ID
-
-
-
-## 获取歌手信息
-
-https://m.music.migu.cn/migu/remoting/cms_artist_detail_tag?artistId=18196
-
-
-
-## 获取歌手的歌曲信息
-
-https://m.music.migu.cn/migu/remoting/cms_artist_song_list_tag?pageSize=20&pageNo=0&artistId=18196
-
-
-
-# QQ
-
-## 搜索
-
-移动端
-
-原生
-
-https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp?_=1601273937730&g_tk=5381&uin=&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=h5&needNewCode=1&g_tk_new_20200303=757507025&w=许嵩&zhidaqu=1&catZhida=1&t=0&flag=1&ie=utf-8&sem=1&aggr=0&perpage=20&n=20&p=1&remoteplace=txt.mqq.all
-
-
-
-简化
-
-https://c.y.qq.com/soso/fcgi-bin/search_for_qq_cp?format=json&w=许嵩&t=0&n=3&p=1
-
-
-
-PC
-
-原生
-
-https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=45902364243238443&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=1&n=10&w=晴天&g_tk_new_20200303=757507025&g_tk=757507025&jsonpCallback=MusicJsonCallback6975585413143889&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-无cookie
-
-https://c.y.qq.com/soso/fcgi-bin/client_search_cp?ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=52707181609011704&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=1&n=10&w=周杰伦&g_tk_new_20200303=5381&g_tk=5381&jsonpCallback=MusicJsonCallback9905084231824244&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-
-
-简化
-
-https://c.y.qq.com/soso/fcgi-bin/client_search_cp?t=0&cr=1&p=1&n=10&w=暗号&format=json
-
-
-
-歌单
-
-https://c.y.qq.com/soso/fcgi-bin/client_music_search_songlist?remoteplace=txt.yqq.playlist&searchid=116824162771124473&flag_qc=0&page_no=0&num_per_page=5&query=芒种&g_tk_new_20200303=757507025&g_tk=757507025&jsonpCallback=MusicJsonCallback9861953451066818&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-简化
-
-https://c.y.qq.com/soso/fcgi-bin/client_music_search_songlist?remoteplace=txt.yqq.playlist&page_no=0&num_per_page=5&query=芒种&format=json
-
-
-
-用户
-
-https://c.y.qq.com/soso/fcgi-bin/client_search_user?ct=24&qqmusic_ver=1298&p=1&n=10&searchid=241014031194265199&remoteplace=txt.yqq.user&w=芒种&g_tk_new_20200303=757507025&g_tk=757507025&jsonpCallback=MusicJsonCallback21387249027880384&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-
-
-t: **0：单曲**，2：歌单，3：用户, **7：歌词**，**8：专辑**，**9：歌手**，**12：mv**
-
-## 热门推荐
-
-原生
-
-https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?g_tk_new_20200303=757507025&g_tk=757507025&jsonpCallback=hotSearchKeysmod_top_search&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-简化
-
-https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?format=json
-
-
-
-## 搜索建议
-
-原生
-
-https://c.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?is_xml=0&key=汪&g_tk_new_20200303=757507025&g_tk=757507025&jsonpCallback=SmartboxKeysCallbackmod_search7504&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-简化
-
-https://c.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key=汪&format=json
-
-
-
-
-
-## 歌曲url
-
-原生
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?callback=getplaysongvkey8148666066702909&g_tk=1641458741&jsonpCallback=getplaysongvkey8148666066702909&loginUin=153140965&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&data={"req_0":{"module":"vkey.GetVkeyServer","method":"CgiGetVkey","param":{"guid":"658650575","songmid":["004Gq0xE1YC8xp"],"songtype":[0],"uin":"153140965","loginflag":1,"platform":"20"}},"comm":{"uin":153140965,"format":"json","ct":24,"cv":0}}
-
-
-
-无cookie
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?callback=getplaysongvkey8282962640405127&g_tk=5381&jsonpCallback=getplaysongvkey8282962640405127&loginUin=0&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&data={"req_0":{"module":"vkey.GetVkeyServer","method":"CgiGetVkey","param":{"guid":"6784379255","songmid":["003CMXGI2yRUDo"],"songtype":[0],"uin":"0","loginflag":1,"platform":"20"}},"comm":{"uin":0,"format":"json","ct":24,"cv":0}}
-
-
-
-简化
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?format=json&data={"req_0":{"module":"vkey.GetVkeyServer","method":"CgiGetVkey","param":{**"filename":["F000001Js78a40BZU6.flac"]**,"guid":"658650575","songmid":["**001Js78a40BZU6**"],"songtype":[0],"uin":"1528773794","loginflag":1,"platform":"20"}},"comm":{"uin":1528773794,"format":"json","ct":24,"cv":0}}
-
-需要配合cookie使用
-
-'Cookie': 'RK=rBAU2mUTf3; ptcz=67e538625364d30a46c259b73931e697c67d86f999cc662e54652d60e76e3989; pgv_pvi=5638619136; pgv_pvid=658650575; ts_refer=www.baidu.com/link; ts_uid=4351235281; tvfe_boss_uuid=993d5eb499ca1d59; LW_sid=61N5Z9D4E2Q5L7C2E1s3S7c1a9; LW_uid=X1p5C9x46205T664o1x3s8v9t2; eas_sid=81B5v9S4A2Y5G6h4H1u3l9a0c8; o_cookie=153140965; yq_index=7; userAction=1; tmeLoginType=2; euin=oK4ANeSloiSq7n**; qqmusic_key=Q_H_L_28VYoz50eOaK7hzysrR-fG8rcfhkPga8KtOW-HKzvuZpTATQrjZkMdYyCNbSC_8; psrf_access_token_expiresAt=1609117938; psrf_musickey_createtime=1601341938; yqq_stat=0; pgv_si=s1154993152; pgv_info=ssid=s7400935225; yplayer_open=1; yq_playschange=0; yq_playdata=; player_exist=1; qqmusic_fromtag=66; _qpsvr_localtk=0.6164186832232864; psrf_qqopenid=65372CE285689F72E89B5F99E0F94C73; psrf_qqaccess_token=731EA40D1650FB0C82E30264C242554C; psrf_qqrefresh_token=08382EB50992E6395EBBD6F094074A6F; qm_keyst=Q_H_L_28VYoz50eOaK7hzysrR-fG8rcfhkPga8KtOW-HKzvuZpTATQrjZkMdYyCNbSC_8; uin=1528773794; psrf_qqunionid=; ts_last=y.qq.com/portal/search.html'
-
-
-
-## 排行榜
-
-### 排行榜信息（移动端）
-
-原生
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?_=1601389640007&data={"comm":{"g_tk":308189849,"uin":1528773794,"format":"json","inCharset":"utf-8","outCharset":"utf-8","notice":0,"platform":"h5","needNewCode":1,"ct":23,"cv":0},"topList":{"module":"musicToplist.ToplistInfoServer","method":"GetAll","param":{}}}
-
-
-
-### 热歌榜
-
-原生
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?callback=getUCGI856765622180173&g_tk=308189849&jsonpCallback=getUCGI856765622180173&loginUin=1528773794&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&data={"detail":{"module":"musicToplist.ToplistInfoServer","method":"GetDetail","param":{"topId":26,"offset":0,"num":20,"period":"2020_39"}},"comm":{"ct":24,"cv":0}}
-
-
-
-简化
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?format=json&data={"detail":{"module":"musicToplist.ToplistInfoServer","method":"GetDetail","param":{"topId":26,"offset":0,"num":200,"period":"2020_39"}},"comm":{"ct":24,"cv":0}}
-
-
-
-### 飙升榜
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?callback=getUCGI6925113299501857&g_tk=308189849&jsonpCallback=getUCGI6925113299501857&loginUin=1528773794&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0&data={"detail":{"module":"musicToplist.ToplistInfoServer","method":"GetDetail","param":{"topId":62,"offset":0,"num":20,"period":"2020-09-29"}},"comm":{"ct":24,"cv":0}}
-
-
-
-简化
-
-https://u.y.qq.com/cgi-bin/musicu.fcg?format=json&data={"detail":{"module":"musicToplist.ToplistInfoServer","method":"GetDetail","param":{"topId":62,"offset":0,"num":20,"period":"2020-09-29"}},"comm":{"ct":24,"cv":0}}
-
-
-
-## 歌词
-
-接口一：原生
-
-https://szc.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_yqq.fcg?nobase64=1&musicid=102296985&callback=jsonp1&g_tk_new_20200303=5381&g_tk=5381&jsonpCallback=jsonp1&loginUin=1528773794&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-
-
-简化
-
-https://szc.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_yqq.fcg?nobase64=1&musicid=102296985&format=json
-
-接口二：原生
-
-https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?callback=MusicJsonCallback_lrc&pcachetime=1601440046695&songmid=000b3wiQ3z0VbG&g_tk_new_20200303=5381&g_tk=5381&jsonpCallback=MusicJsonCallback_lrc&loginUin=1528773794&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0
-
-简化 
-
-https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?songmid=002mZevo3wHvsc&format=json&nobase64=1
-
+    > 5\.   remove()          将node删除
+    >
+    > ```javascript
+    > $('div').remove();
+    > ```
+
+14. jquery事件__底层采用事件监听器添加__可以添加多个事件
+
+15. on 和 off 
+
+    > 1\.   给一个事件添加一个函数
+    >
+    > ```javascript
+    > $('div').on('click', function(){
+    >  alert('hello');
+    > })
+    > ```
+
+    > 2\.   同时给多个事件添加一个函数，多个事件之间可以用空格隔开
+    >
+    > ```javascript
+    > $('div').on('click mouseover', function() {
+    >  alert('hello');
+    > })
+    > ```
+
+    > 3\.   给不同的事件添加不同的函数
+    >
+    > ```javascript
+    > $('div').on({
+    >  click: function() {},
+    >  mouseover: function() {}
+    > })
+    > ```
+
+    > 1\.   $('div').off();    取消所有事件上的所有函数
+    >
+    > 2\.   $('div').off('click')   取消某一个事件下的所有函数
+    >
+    > 3\.   $('div').off('click', show);   取消某一个事件下的指定函数
+
+16. $(document).scrollTop()         获取当前页面的滚动高度
+
+17. __在jQuery中拿到的任何对象都是兼容后的，不需要考虑兼容性__
+
+18. 事件对象.stopPropagation()      防止事件冒泡
+
+19. 事件对象.preventDefault()         阻止默认事件
+
+    > 当然也可以直接在事件函数中       return  false， 代表上面两种同时作用
+
+20. witch：
+
+    > 鼠标事件： 相当于原生JS的   __button__       0  1  2   鼠标按钮的值
+    >
+    > keydown：   keyCode    键码       因为keyCode只在keydown、up支持
+    >
+    > keypress：   charCode   字符码       同理
+
+21. 定位方法：
+
+    > offset()      直接获取当前元素，距离最左边的距离，margin不算
+    >
+    > position()   直接获取，当前元素，距离第一个有定位元素父节点的距离，margin算数
+    >
+    > offsetParent()    查找第一个有定位的父节点，最终会定位到body
+
+22. val()
+
+    > 获取/设置单标签元素的值
+    >
+    > JQ取值只能取第一个符合条件元素的值
+    >
+    > JQ赋值批量操作，会对所有获取到的标签进行赋值
+
+23. size()、length
+
+    > 获取节点的长度
+
+24. each       jquery的循环
+
+    > ```javascript
+    > $('divs').each(function (index, item) {
+    >  alert(item + ',' + index);
+    > })   /* 注意item是js节点对象，JQ使用需要转换 */
+    > ```
+
+25. hover      移入移出效果
+
+    > ```javascript
+    > $('div').hover(function(){
+    >  //移入
+    > }, function() {
+    >  //移出
+    > })
+    > ```
+
+26. 隐藏、显示
+
+    > hide()    隐藏
+    >
+    > ```javascript
+    > $(div).hide();    //参数1：  动画执行的毫秒数；   参数2： 回调函数
+    > ```
+    >
+    > show()   显示
+    >
+    > ```javascript
+    > $(div).show();	  //参数1：   动画执行的毫秒数    参数2： 回调函数
+    > ```
+    >
+    > > 动画从左上角开始，左上角结束
+
+    > slideDown()   
+    >
+    > ```javascript
+    > //同上
+    > ```
+    >
+    > slideUp()
+    >
+    > ```javascript
+    > //同上
+    > ```
+    >
+    > > 动画效果  ‘卷间效果’
+
+    > fadeIn()   淡入
+    >
+    > fadeOut()   淡出
+    >
+    > fadeTo(动画持续时间，透明度0-1，回调函数)
+
+27. 动画
+
+    > __animate()__
+    >
+    > > animate(object，duration，运动形式)
+    > >
+    > > ```javascript
+    > > $('div').stop(true).animate({
+    > >                  opacity: 0.5,
+    > >                  width: 300
+    > >              }, 2000, 'linear')
+    > > ```
+    >
+    > > 默认的运动形式是    慢快慢
+    > >
+    > > - 匀速    “linear”
+    > > - 慢快慢   “swing”
+    > > - ___jquery-ui___    是 jQuery的动画扩展库(现在用的比较少，基本被淘汰了)
+    >
+    > > $().stop()       停止第一个动画，当时后续动画正常运动
+    > >
+    > > $().stop(true)     停止所有动画
+    > >
+    > > $().stop(true, true)   停止所有动画，并且将当前正在进行的动画直接到达目的值
+    > >
+    > > $().finish()            停止所有动画，并且将所有动画都到达目的值
+    >
+    > delay()     用来延迟动画时间
+
+28. 删除节点
+
+    > ​	remove()   删除节点
+    >
+    > + 并不会保留这个节点上之前的事件和行为
+    >
+    > ​    detach()    删除节点
+    >
+    > + 会保留这个节点上之前的事件和行为
+
+29. > ```javascript
+    > $(function () {
+    >  //相当于$(document).ready(function() {})
+    >  //早于window.onload()执行
+    > })
+    > ```
+
+30. - jQuery   标签间的内容   html()  相当于innerHTML        可以解析
+    - jQuery   标签间纯文本   text()    相当于innerText           不会解析
+
+31. 节点操作方法
+
+    > __[注]:__ 下述所有的方法的参数都是选择器
+
+    > siblings()     获取除当前节点外，所有的兄弟节点
+    >
+    > nextAll()      获取除当前节点外，下面的所有兄弟节点
+    >
+    > prevAll()      获取除当前节点外，上面的所有兄弟节点
+    >
+    > nextUntil("node")      当前节点下面到node的所有兄弟节点
+    >
+    > prevUntil("node")      当前节点上面到node的所有兄弟节点
+    >
+    > parentsUntil('node')  当前节点到node的父节点，不包括父节点node
+
+32. > - parent()    获取父节点
+    >
+    > - parents()   获取父节点们，  参数是选择器
+    > - closest()    必须传入参数，  参数是选择器 ，  只获取第一个符合条件的元素
+
+33. 元素节点包装
+
+    > node.wrap()          每一个节点都单独包装     外部包装
+    >
+    > node.wrapAll()     将所有节点整体包装         外部包装
+    >
+    > node.wrapInner()   每个节点都单独包装      内部包装
+    >
+    > node.unwrap()      删除上面一层包装，不包括body节点，没有参数
+
+34. 克隆节点
+
+    > clone()     默认只会克隆节点本身，并不会克隆元素节点的行为和事件
+    >
+    > clone(true)   即会克隆节点本身，并且克隆元素节点的行为和事件
+
+35. add()    将多个选择器拼接在一起
+
+    > 同分组选择器相似
+
+36. slice()   获取指定范围的元素节点    [1,3)   前开后闭
+
+37. serialize()     将表单的数据拼接成querystring
+
+38. serializeArray()    将表单数据转化成数组
+
+39. 事件、触发对象
+
+    > trigger()          主动触发事件
+    >
+    > e.target        （兼容后的触发对象）
+    >
+    > e.type             输出事件类型
+    >
+    > e.data             jQuery支持事件函数传参，需要配合on函数使用
+    >
+    > ```javascript
+    > $('button').on("click", {username: 'name', age: 18}, function() {
+    >  alert(e.data);   //参数对象
+    >  alert(e.data.username);   //拿到相关参数
+    > });
+    > ```
+    >
+    > trigger()    除了可以主动触发官方事件，还可以触发自定义事件
+    >
+    > ```javascript
+    > $('#play').on('play', function() {
+    >  //函数体
+    > })
+    > 
+    > $('#play').trigger('play');   主动触发
+    > ```
+
+40. jquery工具方法
+
+    > $.noConflict()    给jQuery起别名
+    >
+    > $.type()               查询元素类型，比原生js的typeof更加的细化
+    >
+    > $.inArray()           相对于indexOf()
+    >
+    > $.parseJSON()      相当于JSON.parse()
+    >
+    > $.makeArray()       将伪数组转为数组    Array.from()
+    >
+    > $.proxy()              相当于bind
+    >
+    > $.trim()                 trim()
+    >
+    > [注]：基本都是官方引进jQuery方法
+
+41. jquery扩展自己的方法
+
+    > $.extend()       扩展工具方法
+    >
+    > $.fn.extend()    扩展jq对象方法
+
+42. 
