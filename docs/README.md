@@ -31,7 +31,7 @@ Whole Platform Music Python API service
 ```shell
 $ git clone https://github.com/GitHub-ZC/W_PlatformMusicApi.git
 $ cd W_PlatformMusicApi/
-$ pip i -r package.n -i https://mirrors.aliyun.com/pypi/simple/
+$ pip install -r package.n -i https://mirrors.aliyun.com/pypi/simple/
 ```
 
 ## 运行
