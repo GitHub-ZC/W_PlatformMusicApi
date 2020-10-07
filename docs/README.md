@@ -55,6 +55,14 @@ $ python app.py runserver -h 0.0.0.0
 $ python app.py runserver --threaded
 ```
 
+
+
+## 在线文档
+
+[W_PlatformMusicApi Doc](https://github-zc.github.io/W_PlatformMusicApi/)
+
+
+
 ## 用户须知
 
 !> 当前服务器为框架自带服务器，考虑到性能问题，可以使用专门web服务器与本项目对接，例如`nginx`，具体的搭建方法还请用户自行百度，这里不做演示
