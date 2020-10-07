@@ -8,5 +8,5 @@
 * 请求库：Requests
 * 后端数据接口：Flask Flask-restful
 
-[GitHub](https://github-zc.github.io/W_PlatformMusicApi)
+[GitHub](https://github.com/GitHub-ZC/W_PlatformMusicApi)
 [Get Started](#W_PlatformMusicApi)
