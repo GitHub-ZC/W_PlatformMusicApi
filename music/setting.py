@@ -9,7 +9,7 @@ import os
 # DB_URI = "mysql+pymysql://{username}:{password}@{host}:{port}/{db}?charset=utf8".format(username=USERNAME,password=PASSWORD, host=HOST,port=PORT, db=DATABASE)
 
 
-DEBUG=True
+DEBUG=False
 BASE_URL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 数据库配置
