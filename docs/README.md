@@ -77,9 +77,15 @@ $ python app.py runserver --threaded
 
 !> 本项目仅供学习使用,请尊重版权，请勿利用此项目从事商业行为
 
+
+
 ## 更新记录
 
-v0.1.0：项目刚开始启动，目前只有QQ平台Api
+v0.1.0：项目刚开始启动，目前只有**QQ**平台Api
+
+v0.2.0:   添加**migu**平台Api，对部分QQ平台接口添加了错误处理
+
+
 
 # 接口文档
 
@@ -411,4 +417,3 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 `limit`：返回数据的数量，默认 30
 
 示例：[/migu/playlist/info/]()
-
