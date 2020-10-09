@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 
-import util.request
+import util.qq_request
 
 
 # 获取 cookie
@@ -9,7 +9,7 @@ class GetCookie(Resource):
 
         js_data = {
             'status': 200,
-            'data': {'cookie': util.request.cookie_dict}
+            'data': {'cookie': util.qq_request.cookie_dict}
         }
         return js_data
 
@@ -32,8 +32,8 @@ class SetCookie(Resource):
                 'info': 'Cookie Invalid format'
             }
 
-        util.request.cookie = cookie
-        util.request.cookie_dict = arr
+        util.qq_request.cookie = cookie
+        util.qq_request.cookie_dict = arr
 
         return {
             'status': 200,

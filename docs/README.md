@@ -83,7 +83,7 @@ $ python app.py runserver --threaded
 
 v0.1.0：项目刚开始启动，目前只有**QQ**平台Api
 
-v0.2.0:   添加**migu**平台Api，对部分QQ平台接口添加了错误处理
+v0.2.0：添加**migu**平台Api，对部分QQ平台接口添加了错误处理
 
 
 

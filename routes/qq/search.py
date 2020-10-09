@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
 
 from music.extions import cache
-from util.request import request
+from util.qq_request import request
 
 # 设置 '/' 参数解析对象
 parser = reqparse.RequestParser()

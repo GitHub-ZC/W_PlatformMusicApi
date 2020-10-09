@@ -1,12 +1,12 @@
 from flask_restful import Resource, reqparse
 
-import util.request
-from util.request import request
+import util.qq_request
+from util.qq_request import request
 
 
 class TopCategory(Resource):
     def get(self):
-        uin = util.request.cookie_dict.get('uin', 0)
+        # uin = util.qq_request.cookie_dict.get('uin', 0)
 
         url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?_=1601389640007&data={"comm":{"g_tk":308189849,"uin":1528773794,"format":"json","inCharset":"utf-8","outCharset":"utf-8","notice":0,"platform":"h5","needNewCode":1,"ct":23,"cv":0},"topList":{"module":"musicToplist.ToplistInfoServer","method":"GetAll","param":{}}}'
         data = request(url)

@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 
-from util.request import request
+from util.qq_request import request
 
 # 歌词的参数解析
 parser = reqparse.RequestParser()

@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
 
-import util.request
-from util.request import request
+import util.qq_request
+from util.qq_request import request
 
 parser = reqparse.RequestParser()
 parser.add_argument('mid', type=str, default='004O1DHG4MjYOi', trim=True)
@@ -14,7 +14,7 @@ class SongUrl(Resource):
         br = args.get('br')
         mid = args.get('mid')
 
-        uin = util.request.cookie_dict.get('uin', 0)
+        uin = util.qq_request.cookie_dict.get('uin', 0)
 
         typeMap = {
             'm4a': {
