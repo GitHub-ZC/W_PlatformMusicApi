@@ -112,7 +112,7 @@ $ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --enable-threads --v
 2、无虚拟环境
 
 ```shell
-$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --enable-threads --virtualenv ./env/ --pidfile uwsgi.pid --daemonize uwsgi.log
+$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --enable-threads --pidfile uwsgi.pid --daemonize uwsgi.log
 ```
 
 
