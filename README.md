@@ -55,6 +55,80 @@ $ python app.py runserver -h 0.0.0.0
 $ python app.py runserver --threaded
 ```
 
+```shell
+$ python app.py runserver -p 8080 -h 0.0.0.0 --threaded
+```
+
+
+
+## 守护进程模式运行
+
+> 考虑到框架自带服务器的性能问题，此版本新添加生产服务器 `uwsgi`
+>
+> 同时可以配置 服务器 以 **守护进程** 模式 运行 
+
+> 安装 uwsgi
+
+```shell
+$ pip install uwsgi -i https://mirrors.aliyun.com/pypi/simple/
+```
+
+> 说明：centos、ubuntu、debian、mac、window  具体 每个平台 请自行百度
+
+
+
+> 命令行启动 `uwsgi`
+
+```shell
+$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app
+```
+
+> --http 0.0.0.0:80   **0.0.0.0** 代表 允许 外网主机访问；**80** 代表服务器端口
+>
+> 如果你使用 Centos 需要自行 配置 防火墙 放行 此端口
+
+
+
+> 守护进程运行
+
+```shell
+$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --pidfile uwsgi.pid --daemonize uwsgi.log
+```
+
+> `--virtualenv`    添加 python 虚拟环境
+>
+> `--enable-threads`    如果你想要维护Python线程支持，而不为你的应用启动多线程，那么仅需添加 `--enable-threads` 选项
+
+
+
+常用的服务器启动配置
+
+1、有虚拟环境
+
+```shell
+$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --enable-threads --virtualenv ./env/ --pidfile uwsgi.pid --daemonize uwsgi.log
+```
+
+2、无虚拟环境
+
+```shell
+$ uwsgi --http 0.0.0.0:80 --wsgi-file app.py --callable app --enable-threads --virtualenv ./env/ --pidfile uwsgi.pid --daemonize uwsgi.log
+```
+
+
+
+> 停止服务器
+
+```shell
+$ uwsgi --stop uwsgi.pid        # 前提(必须在当前项目的 根 目录下面)
+```
+
+> 重载服务器
+
+```shell
+$ uwsgi --reload uwsgi.pid      # 前提(必须在当前项目的 根 目录下面)
+```
+
 
 
 ## 在线文档
