@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_script import Manager
 
 from routes import init_api
 from . import setting
@@ -8,7 +7,7 @@ from .extions import init_app
 
 def create_app():
     # 创建并且导入Flask相关配置(邮箱，数据库，。。。)
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='../public')
     app.config.from_object(setting)
 
     # 初始化路由

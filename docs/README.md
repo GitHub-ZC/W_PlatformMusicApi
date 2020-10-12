@@ -26,6 +26,12 @@ Whole Platform Music Python API service
 
 
 
+## 在线文档
+
+[W_PlatformMusicApi Doc](https://github-zc.github.io/W_PlatformMusicApi/)
+
+
+
 ## 安装
 
 ```shell
@@ -131,10 +137,6 @@ $ uwsgi --reload uwsgi.pid      # 前提(必须在当前项目的 根 目录下�
 
 
 
-## 在线文档
-
-[W_PlatformMusicApi Doc](https://github-zc.github.io/W_PlatformMusicApi/)
-
 
 
 ## 用户须知
@@ -185,7 +187,7 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 `type`：搜索类型 默认为0 取值意义 type: 0：单曲，2：歌单，3:用户 ,7：歌词，8：专辑，9：歌手，12：mv
 
-示例：[/qq/search/?key=暗号]()
+示例：[/qq/search/?key=暗号](http://iecoxe.top:3500/qq/search/?key=暗号)
 
 
 
@@ -195,7 +197,7 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 说明：调用此接口，默认会进行缓存处理
 
-示例：[/qq/search/hot/]()
+示例：[/qq/search/hot/](http://iecoxe.top:3500/qq/search/hot/)
 
 
 
@@ -205,7 +207,7 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 必选参数：`key`
 
-示例：[/qq/search/suggest/?key=周杰伦]()
+示例：[/qq/search/suggest/?key=周杰伦](http://iecoxe.top:3500/qq/search/suggest/?key=周杰伦)
 
 
 
@@ -228,7 +230,7 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 取值意义： 128：mp3 128k，320：mp3 320k，m4a：m4a格式 128k，flac：flac格式 无损，ape：ape格式 无损
 
-示例：[/qq/song/url/?mid=0039MnYb0qxYhV,004Z8Ihr0JIu5s&br=flac]()
+示例：[/qq/song/url/?mid=0039MnYb0qxYhV,004Z8Ihr0JIu5s&br=flac](http://iecoxe.top:3500/qq/song/url/?mid=0039MnYb0qxYhV,004Z8Ihr0JIu5s&br=flac)
 
 
 
@@ -238,7 +240,7 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 可选参数：`mid` 默认 `004O1DHG4MjYOi`
 
-示例：[/qq/lyric/?mid=004O1DHG4MjYOi]()
+示例：[/qq/lyric/?mid=004O1DHG4MjYOi](http://iecoxe.top:3500/qq/lyric/?mid=004O1DHG4MjYOi)
 
 
 
@@ -246,11 +248,11 @@ v0.2.1：添加 **uwsgi**生产服务器，添加**守护进程**的启动模式
 
 #### 获取榜单列表
 
-接口：`/qq/top/category`
+接口：`/qq/top/category/`
 
 说明：这个接口数据，包含了榜单名、榜单 id、更新时间、播放量，都是作为下一个接口的请求参数
 
-示例：[/top/category]()
+示例：[/qq/top/category/](http://iecoxe.top:3500/qq/top/category/)
 
 
 
@@ -282,7 +284,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `rankValue`: 排名改变值
 
-示例：[/qq/top/?topId=26]()
+示例：[/qq/top/?topId=26](http://iecoxe.top:3500/qq/top/?topId=26)
 
 
 
@@ -312,7 +314,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 说明：cookie 已经在服务器端，进行的 Json 转化
 
-示例：[/qq/getcookie/]()
+示例：[/qq/getcookie/](http://iecoxe.top:3500/qq/getcookie/)
 
 
 
@@ -338,7 +340,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 说明：调用此接口 , 传入搜索关键词可以搜索该音乐 / 专辑 / 歌手 / 歌单 / 用户(需要自己传入type参数) , 默认会自动去除 关键词 前后的**空白字符** 
 
-示例：[/migu/search/]()
+示例：[/migu/search/](http://iecoxe.top:3500/migu/search/)
 
 
 
@@ -348,7 +350,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 说明：调用此接口，默认会进行缓存处理
 
-示例：[/migu/search/hot/]()
+示例：[/migu/search/hot/](http://iecoxe.top:3500/migu/search/hot/)
 
 
 
@@ -358,7 +360,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 必选参数：`key`
 
-示例：[/migu/search/suggest/?key=周杰伦]()
+示例：[/migu/search/suggest/?key=周杰伦](http://iecoxe.top:3500/migu/search/suggest/?key=周杰伦)
 
 
 
@@ -376,7 +378,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `id`：歌曲的`copyrightId`，默认`60054701923`
 
-示例：[/migu/song/url/?id=60054701923]()
+示例：[/migu/song/url/?id=60054701923](http://iecoxe.top:3500/migu/song/url/?id=60054701923)
 
 
 
@@ -386,7 +388,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 可选参数：`id`  歌曲的copyrightId      默认 `60084600554`
 
-示例：[/migu/lyric/?mid=60084600554]()
+示例：[/migu/lyric/?mid=60084600554](http://iecoxe.top:3500/migu/lyric/?mid=60084600554)
 
 
 
@@ -424,7 +426,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `13`：新专辑榜
 
-示例：[/migu/top/?topID=2]()
+示例：[/migu/top/?topID=2](http://iecoxe.top:3500/migu/top/?topID=2)
 
 
 
@@ -438,7 +440,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `artistId`：歌手ID  ，默认 18196
 
-示例：[/migu/singer/info/?artistId=18196]()
+示例：[/migu/singer/info/?artistId=18196](http://iecoxe.top:3500/migu/singer/info/?artistId=18196)
 
 
 
@@ -454,7 +456,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `offset`：分页，默认 1
 
-示例：[/migu/singer/songinfo/?artistId=18196&offset=1]()
+示例：[/migu/singer/songinfo/?artistId=18196&offset=1](http://iecoxe.top:3500/migu/singer/songinfo/?artistId=18196&offset=1)
 
 
 
@@ -472,7 +474,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `type`：1： 推荐 ； 2： 最新， 默认 推荐
 
-示例：[/migu/playlist/]()
+示例：[/migu/playlist/](http://iecoxe.top:3500/migu/playlist/)
 
 返回字段含义：`contentCount` 歌单 歌曲 的总数量，可用于 下面接口 中  `limit` 参数
 
@@ -492,4 +494,4 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `limit`：返回数据的数量，默认 30
 
-示例：[/migu/playlist/info/]()
+示例：[/migu/playlist/info/](http://iecoxe.top:3500/migu/playlist/info/)
