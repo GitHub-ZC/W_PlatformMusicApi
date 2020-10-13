@@ -428,7 +428,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 `13`：新专辑榜
 
-示例：[/migu/top/?topID=2](http://iecoxe.top:3500/migu/top/?topID=2)
+示例：[/migu/top/?topId=2](http://iecoxe.top:3500/migu/top/?topId=2)
 
 
 
