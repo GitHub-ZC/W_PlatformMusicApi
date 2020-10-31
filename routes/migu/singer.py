@@ -1,7 +1,9 @@
 import json, re
 
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
+from music.extions import cache
 from util.migu_request import request
 
 # 参数解析
@@ -18,6 +20,8 @@ class SingerInfo(Resource):
         url = f'https://m.music.migu.cn/migu/remoting/cms_artist_detail_tag?artistId={artistId}'
 
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data
 
 # 参数解析
@@ -71,4 +75,6 @@ class SingerSongInfo(Resource):
                 'songlist': js_data
             }
         }
+
+        cache.set(Req.url, js_data, timeout=120)
         return js_data

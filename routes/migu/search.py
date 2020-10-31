@@ -1,4 +1,5 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
 from music.extions import cache
 from util.migu_request import request
@@ -28,6 +29,7 @@ class Search(Resource):
         url = f'https://m.music.migu.cn/migu/remoting/scr_search_tag?rows={limit}&type={type}&keyword={key}&pgc={offset}'
         data = request(url)
 
+        cache.set(Req.url, data, timeout=120)
         return data
 
 # 热们搜索
@@ -48,4 +50,6 @@ class SuggestSearch(Resource):
         url = f'https://m.music.migu.cn/migu/remoting/autocomplete_tag?keyword={key}'
 
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data

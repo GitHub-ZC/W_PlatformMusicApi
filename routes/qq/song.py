@@ -1,6 +1,8 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
 import util.qq_request
+from music.extions import cache
 from util.qq_request import request
 
 parser = reqparse.RequestParser()
@@ -62,4 +64,5 @@ class SongUrl(Resource):
                 'info': 'Songmid Invalid format or Server Invalid format'
             }
 
+        cache.set(Req.url, js_data, timeout=120)
         return js_data

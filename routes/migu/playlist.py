@@ -1,5 +1,7 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
+from music.extions import cache
 from util.migu_request import request
 
 
@@ -22,6 +24,7 @@ class PlayList(Resource):
 
         data = request(url)
 
+        cache.set(Req.url, data, timeout=120)
         return data
 
 
@@ -40,4 +43,6 @@ class PlayListInfo(Resource):
         url = f'https://m.music.migu.cn/migu/remoting/playlistcontents_query_tag?playListType=2&playListId={playListId}&contentCount={limit}'
 
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data

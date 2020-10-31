@@ -2,6 +2,7 @@ import json
 import re
 
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
 from music.extions import cache
 from util.migu_request import request
@@ -54,4 +55,5 @@ class Top(Resource):
                 'error': 'service error'
             }
 
+        cache.set(Req.url, js_data, timeout=120)
         return js_data

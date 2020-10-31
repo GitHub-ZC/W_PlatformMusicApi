@@ -1,5 +1,7 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
+from music.extions import cache
 from util.migu_request import request
 
 parser = reqparse.RequestParser()
@@ -20,5 +22,7 @@ class SongUrl(Resource):
         url = f'https://m.music.migu.cn/migu/remoting/cms_detail_tag?cpid={id}'
 
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
 
         return data

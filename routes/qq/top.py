@@ -1,6 +1,7 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
-import util.qq_request
+from music.extions import cache
 from util.qq_request import request
 
 
@@ -11,6 +12,7 @@ class TopCategory(Resource):
         url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?_=1601389640007&data={"comm":{"g_tk":308189849,"uin":1528773794,"format":"json","inCharset":"utf-8","outCharset":"utf-8","notice":0,"platform":"h5","needNewCode":1,"ct":23,"cv":0},"topList":{"module":"musicToplist.ToplistInfoServer","method":"GetAll","param":{}}}'
         data = request(url)
 
+        cache.set(Req.url, data, timeout=120)
         return data
 
 # 排行榜各榜单详情
@@ -35,4 +37,6 @@ class Top(Resource):
             url = 'https://u.y.qq.com/cgi-bin/musicu.fcg?format=json&data={"detail":{"module":"musicToplist.ToplistInfoServer","method":"GetDetail","param":{"topId":%s,"offset":%s,"num":%s}},"comm":{"ct":24,"cv":0}}'\
                   % (topId, (offset - 1) * limit, limit)
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data

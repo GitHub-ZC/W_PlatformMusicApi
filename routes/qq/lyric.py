@@ -1,5 +1,7 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
+from music.extions import cache
 from util.qq_request import request
 
 # 歌词的参数解析
@@ -14,4 +16,6 @@ class Lyric(Resource):
 
         url = f'https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?songmid={mid}&format=json&nobase64=1&g_tk=5381'
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data

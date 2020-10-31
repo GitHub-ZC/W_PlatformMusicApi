@@ -1,4 +1,5 @@
 from flask_restful import Resource, reqparse
+from flask_restful import request as Req
 
 from music.extions import cache
 from util.qq_request import request
@@ -33,6 +34,7 @@ class Search(Resource):
             url = f'https://c.y.qq.com/soso/fcgi-bin/client_search_user?p={offset}&n={limit}&searchid=241014031194265199&remoteplace=txt.yqq.user&w={key}&format=json'
         data = request(url)
 
+        cache.set(Req.url, data, timeout=120)
         return data
 
 # 热们搜索
@@ -53,4 +55,6 @@ class SuggestSearch(Resource):
         url = f'https://c.y.qq.com/splcloud/fcgi-bin/smartbox_new.fcg?key={key}&format=json'
 
         data = request(url)
+
+        cache.set(Req.url, data, timeout=120)
         return data
