@@ -398,7 +398,7 @@ timeType`: 当前榜单的时间格式 `YYYY_W` 或 `YYYY-MM-DD
 
 可选参数：`id`  歌曲的copyrightId      默认 `60084600554`
 
-示例：[/migu/lyric/?mid=60084600554](http://iecoxe.top:3500/migu/lyric/?mid=60084600554)
+示例：[/migu/lyric/?id=60084600554](http://iecoxe.top:3500/migu/lyric/?id=60084600554)
 
 
 
