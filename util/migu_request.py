@@ -18,7 +18,7 @@ def request(url, isJson=True):
     # 构建请求头
     header = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0',
-        'Referer': 'https://music.migu.cn/v3'
+        'Referer': 'https://m.music.migu.cn/'
     }
 
     # if is_cookie:
