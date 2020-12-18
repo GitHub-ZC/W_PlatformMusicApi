@@ -13,6 +13,9 @@ Whole Platform Music Python API service
 [jsososo/QQMusicApi](https://github.com/jsososo/QQMusicApi/)
 
 
+## 音乐软件
+[Wp_music](https://github.com/GitHub-ZC/Wp_music)
+
 
 ## 环境要求
 
