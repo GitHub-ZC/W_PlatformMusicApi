@@ -19,7 +19,7 @@ Whole Platform Music Python API service
 
 [Wp_music](https://github.com/GitHub-ZC/Wp_music)
 
-[软件下载](https://github.com/GitHub-ZC/Wp_music/releases)
+[软件下载](https://github.com/GitHub-ZC/Wp_music/releases) 建议使用专业下载器下载
 
 
 ## 环境要求
