@@ -54,7 +54,7 @@ class SongUrl(Resource):
         try:
             js_data = {
                 'data': {
-                    'url': dict([ [url.get('songmid'), 'http://112.29.192.37/amobile.music.tc.qq.com/' + url.get('purl')] for url in data.get('req_0').get('data').get('midurlinfo') if url.get('purl')])
+                    'url': dict([ [url.get('songmid'), 'https://isure.stream.qqmusic.qq.com/' + url.get('purl')] for url in data.get('req_0').get('data').get('midurlinfo') if url.get('purl')])
                 },
                 'status': 200
             }
